@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:hrms/views/screens/login_page.dart';
+
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -11,12 +15,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // Set the duration of the splash screen
-    Timer(Duration(seconds: 3), () {
-      // Navigate to the next screen after the splash screen duration
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => const LoginScreen(),
+        ),
       );
     });
   }
@@ -24,13 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // You can customize the appearance of your splash screen here
       body: Center(
-        child: Text(
-          'Your App Name',
-          style: TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
+        child: Hero(
+          tag: 'splash_image',
+          child: Image.asset(
+            'assets/images/risolutor.jpg',
+            width: 200.0,
+            height: 200.0,
           ),
         ),
       ),
@@ -38,15 +42,35 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: const Text('Login Screen'),
       ),
       body: Center(
-        child: Text('Welcome to your app!'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Welcome to the Login Page!'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Use Navigator to navigate to the LoginPage
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
+              },
+              child: const Text('Go to Another Screen'),
+            ),
+          ],
+        ),
       ),
     );
   }

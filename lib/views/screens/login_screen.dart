@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/input_wrapper.dart';
-import 'Header.dart';
-
-
+import '../widgets/app_custom_appbar_wrapper.dart';
+import '../widgets/header.dart';
+import '../widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -11,28 +10,22 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-            Colors.blue,
-            Colors.blue,
-            Colors.blue,
-          ]),
-        ),
+      body: AppCustomAppbarWrapper(
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 80,),
+            const SizedBox(
+              height: 100,
+            ),
             const Header(),
-            Expanded(child: Container(
+            Expanded(
+                child: Container(
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60),
-                  )
-              ),
-              child: const InputWrapper(),
+                  )),
+              child: const LoginForm(),
             ))
           ],
         ),

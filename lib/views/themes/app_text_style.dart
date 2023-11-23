@@ -31,5 +31,5 @@ abstract class AppTextStyle {
       color: AppColors.mediumGreyColor);
 
   static const darkRedF18W400TextStyle = TextStyle(
-      fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.darkRedColor);
+      fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.darkRedColor); 
 }

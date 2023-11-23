@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:hrms/views/screens/login_page.dart';
+import 'package:hrms/views/screens/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -59,7 +59,6 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Use Navigator to navigate to the LoginPage
                 Navigator.push(
                   context,
                   MaterialPageRoute(

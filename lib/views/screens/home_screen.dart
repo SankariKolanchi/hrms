@@ -55,9 +55,9 @@ class HomeScreen extends StatelessWidget {
                 width: 150,
                 height: 200,
                 child: const CustomCardWidget(
-                  image: "assets/images/invoice.png",
+                  image: "assets/images/project.png",
+                  text: "Projects",
                   text2: "140",
-                  text: "Invoice",
                 )),
             Positioned(
                 top: topBarHeight - 80,
@@ -65,9 +65,9 @@ class HomeScreen extends StatelessWidget {
                 width: 150,
                 height: 200,
                 child: const CustomCardWidget(
-                  image: "assets/images/invoice.png",
-                  text2: "140",
-                  text: "Invoice",
+                  image: "assets/images/clientman.png",
+                  text2: "10",
+                  text: "Clients",
                 )),
             Positioned(
                 top: topBarHeight + 170,
@@ -75,19 +75,19 @@ class HomeScreen extends StatelessWidget {
                 width: 150,
                 height: 200,
                 child: const CustomCardWidget(
-                  image: "assets/images/invoice.png",
-                  text2: "140",
-                  text: "Invoice",
+                  image: "assets/images/emp.jpg",
+                  text: "Employees",
+                  text2: "30",
                 )),
             Positioned(
               top: topBarHeight + 300,
               right: 30,
               width: 150,
               height: 200,
-              child: CustomCardWidget(
+              child: const CustomCardWidget(
                 image: "assets/images/invoice.png",
-                text2: "140",
-                text: "Invoice",
+                text2: "40",
+                text: "Invoices",
               ),
             ),
           ],
@@ -114,8 +114,8 @@ class AppCustomAppbar extends StatelessWidget {
           children: [
             Image.asset(
               "assets/images/risolutor.jpg",
-              width: 30,
-              height: 30,
+              width: 50,
+              height: 50,
             ),
             const Text(
               "New HRMS",
@@ -166,14 +166,8 @@ class CustomCardWidget extends StatelessWidget {
             height: 60,
           ),
           const SizedBox(height: 15),
-          Text(
-            text2,
-            style: const TextStyle(fontSize: 18, color: Colors.grey),
-          ),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 20),
-          ),
+          Text(text2, style: AppTextStyle.blackF25FW500TextStyle),
+          Text(text, style: AppTextStyle.blackF18FW400TextStyle)
         ],
       ),
     );

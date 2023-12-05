@@ -41,16 +41,19 @@ class LoginForm extends StatelessWidget {
           ),
           TextButton(
               onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) {
-                  return const RegisterScreen();
-                }));
+           
               },
               child: const Text(
-                "Create an new account",
+                " Dont have account?",
                 style: AppTextStyle.blackF14FW500TextStyle,
-              )),
-        ],
+              )
+              ),TextButton(onPressed: (){
+                   Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const RegisterScreen();
+                        }));
+              }, child: Text("SignUp")
+      )],
       ),
     );
   }

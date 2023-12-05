@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/views/screens/registration_screen.dart';
+
 
 import 'dart:async';
- 
+
+import 'package:hrms/views/screens/registration_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {

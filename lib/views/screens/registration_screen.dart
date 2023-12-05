@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:hrms/views/widgets/app_button_widget.dart';
+
 import '../themes/app_text_style.dart';
-import '../widgets/Button.dart';
-import '../widgets/app_custom_appbar_wrapper.dart';
-import '../widgets/header.dart';
+
+import '../widgets/app_textfield.dart';
+import '../widgets/app_topbar_widget.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -14,108 +16,68 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AppCustomAppbarWrapper(
-        child: Column(
-          children: <Widget>[
-            const SizedBox(
-              height: 100,
+        body: Column(children: [
+      const AppTopBarWidget(title: "REGISTER"),
+      Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 25,
+          ),
+          child: Column(children: [
+            const SizedBox(height: 35),
+            const AppTextFieldWidget(
+              hintText: "UserName ",
+              prefixIcon: Icons.person,
+              textStyle: AppTextStyle.blackF14FW500TextStyle,
             ),
-            const Header(),
-            Expanded(
-                child: Container(
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(60),
-                  )),
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(30),
-                child: Column(children: [ 
-                  const Center(
-                    child: Text(
-                      "Register",
-                      style: TextStyle(color: Colors.black, fontSize: 25.0),
-                    ),
+            const AppTextFieldWidget(
+              hintText: "Email ",
+              prefixIcon: Icons.email,
+              textStyle: AppTextStyle.blackF14FW500TextStyle,
+            ),
+            const SizedBox(height: 25),
+            const AppTextFieldWidget(
+              hintText: "Password",
+              prefixIcon: Icons.password,
+              textStyle: AppTextStyle.blackF14FW500TextStyle,
+            ),
+            const SizedBox(height: 40),
+            const AppTextFieldWidget(
+              hintText: "Confirm Password",
+              prefixIcon: Icons.confirmation_num,
+              textStyle: AppTextStyle.blackF14FW500TextStyle,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            AppButtonWidget(
+              onTap: () {},
+              title: "REGISTER",
+            ),
+            const SizedBox(height: 45),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an account? ",
+                  style: AppTextStyle.blackF14FW500TextStyle,
+                ),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
+                  },
+                  child: const Text(
+                    "Login",
+                    style: AppTextStyle.orangeF11FW500TextStyle,
                   ),
-                  const SizedBox(height: 20),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.blue)),
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        hintText: "Enter your username",
-                        hintStyle: TextStyle(color: Colors.grey),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.blue)),
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        hintText: "Enter your email",
-                        hintStyle: TextStyle(color: Colors.grey),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.brown)),
-                    ),
-                    child: const TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: "Enter your password",
-                        hintStyle: TextStyle(color: Colors.grey),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.brown)),
-                    ),
-                    child: const TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: "Confirm your password",
-                        hintStyle: TextStyle(color: Colors.grey),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Button(
-                    text: 'Register',
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const LoginPage();
-                        }));
-                      },
-                      child: const Text(
-                        "Already have a account",
-                        style: AppTextStyle.blackF14FW500TextStyle,
-                      )),
-                ]),
-              ),
-            )),
-          ],
-        ),
-      ),
-    );
+                ),
+                SizedBox(width: 5,),
+                const Text(
+                  "Now",
+                  style: AppTextStyle.blackF14FW500TextStyle,
+                ),
+              ],
+            )
+          ]))
+    ]));
   }
 }

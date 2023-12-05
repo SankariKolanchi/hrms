@@ -6,13 +6,14 @@ sealed class AppColors {
   static const blackColor = Color(0xFF000000);
   static const darkBlackColor = Color(0xFF333333);
   static const lightBlackColor = Color(0xFF5A5A5A);
+  static const orangeColor = Color(0xFFFF9C44);
 
   static const redColor = Color(0xFFE51414);
   static const darkRedColor = Color(0xFFE43A84);
   static const lightGreenColor = Color(0xFFEFF8F1);
   static const greenColor = Color(0xFF2A8000);
 
-  static const blueColor = Colors.blue;
+  static const blueColor = Color(0xFF0B14D5);
   static const mediumBlueColor = Color(0xFFF0F7FA);
   static const lightBlueColor = Color(0xFFDBE6EE);
 

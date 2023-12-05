@@ -5,9 +5,11 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Container( 
-      padding: const EdgeInsets.all(20),
-      child: const Center( 
+    return const Padding(
+      padding: EdgeInsets.all(20),
+      child: Center(
+        ///TODO:
+        ///logo needed
         child: Text(
           "Risolutor Hrms",
           style: TextStyle(color: Colors.white, fontSize: 18),

@@ -8,6 +8,14 @@ abstract class AppTextStyle {
   static const blackF14FW500TextStyle =
       TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black);
 
+  static const blackF20FW500TextStyle =
+      TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black);
+        static const orangeF12FW500TextStyle =
+      TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.orange);
+
+        static const orangeF11FW500TextStyle =
+      TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: Colors.orange);
+
   static const blackF14W600TextStyle =
       TextStyle(fontSize: 14, fontWeight: FontWeight.w600);
 
@@ -16,6 +24,9 @@ abstract class AppTextStyle {
 
   static const blackF18FW500TextStyle =
       TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black);
+
+  static const blackF25FW500TextStyle =
+      TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: Colors.black);
 
   static const mediumPinkF14F500TextStyle = TextStyle(
       fontSize: 14,
@@ -31,5 +42,8 @@ abstract class AppTextStyle {
       color: AppColors.mediumGreyColor);
 
   static const darkRedF18W400TextStyle = TextStyle(
-      fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.darkRedColor); 
+      fontSize: 18, fontWeight: FontWeight.w400, color: AppColors.darkRedColor);
+
+  static const whiteF22FW500TextStyle =
+      TextStyle(fontSize: 22, fontWeight: FontWeight.w500, color: Colors.white);
 }

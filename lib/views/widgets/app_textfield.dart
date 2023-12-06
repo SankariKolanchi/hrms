@@ -17,6 +17,7 @@ class AppTextFieldWidget extends StatelessWidget {
   final String? hintText;
   final TextStyle? textStyle;
   final EdgeInsetsGeometry? padding;
+  
 
   @override
   Widget build(BuildContext context) {

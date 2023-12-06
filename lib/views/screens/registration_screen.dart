@@ -70,7 +70,7 @@ class RegisterScreen extends StatelessWidget {
                     style: AppTextStyle.orangeF11FW500TextStyle,
                   ),
                 ),
-                SizedBox(width: 5,),
+                const SizedBox(width: 5,),
                 const Text(
                   "Now",
                   style: AppTextStyle.blackF14FW500TextStyle,

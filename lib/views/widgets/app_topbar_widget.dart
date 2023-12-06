@@ -13,7 +13,7 @@ class AppTopBarWidget extends StatelessWidget {
 
     final topBarHeight = height * (30 / 100);
 
-    return Container(
+    return SizedBox(
    
       height: topBarHeight,
       child: Stack(

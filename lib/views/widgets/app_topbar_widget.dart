@@ -18,7 +18,7 @@ class AppTopBarWidget extends StatelessWidget {
       height: topBarHeight,
       child: Stack(
         children: [
-          CustomAppBarWidget(height: topBarHeight - 10),
+          CustomAppBarWidget(height: topBarHeight - 10, showTitle: true, showImage: true,),
           Positioned(
             bottom: 0,
             right: 0,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_text_style.dart';
+import '../widgets/card_widget.dart';
 import '../widgets/custom_appbar.dart';
+import 'holiday_list_screen.dart';
 
 class EmployeeScreen extends StatelessWidget {
   const EmployeeScreen({Key? key}) : super(key: key);
@@ -41,28 +42,38 @@ class EmployeeScreen extends StatelessWidget {
                     color: Colors.indigo,
                     width: double.infinity,
                     height: topBarHeight,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomAppBarWidget(
-                          height: height * (10 / 100),
-                          showTitle: false,
-                          showImage: false,
-                        ),
-                        Container(
-                          height: 20,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(40),
-                              topRight: Radius.circular(40),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HolidayListScreen(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomAppBarWidget(
+                            height: height * (10 / 100),
+                            showTitle: false,
+                            showImage: false,
+                          ),
+                          Container(
+                            height: 20,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40),
+                                topRight: Radius.circular(40),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  CustomCardWithIconWidget(
+                       CustomCardWithIconWidget(
                     icon: Icons.person,
                     backgroundColor: Colors.grey,
                     text: "Team leader",
@@ -116,97 +127,22 @@ class EmployeeScreen extends StatelessWidget {
                     width: cardWidth,
                     height: 180,
                   ),
+                Positioned(
+            bottom: 16,
+            right: 16,
+            child: FloatingActionButton(
+              onPressed: () {
+                print('Bottom-right FloatingActionButton pressed!');
+              },
+              backgroundColor: Colors.orange,
+              child: Icon(Icons.add, color: Colors.white),
+            ),
+          ),
+        
                 ],
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomCardWithIconWidget extends StatelessWidget {
-  final String text;
-  final String text2;
-  final MaterialColor backgroundColor;
-  final IconData icon;
-  final Offset position;
-  final double width;
-  final double height; // Add this line
-
-  const CustomCardWithIconWidget({
-    Key? key,
-    required this.text,
-    required this.text2,
-    required this.backgroundColor,
-    required this.icon,
-    required this.position,
-    required this.width,
-    required this.height, // Add this line
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: position.dy,
-      left: position.dx,
-      child: Container(
-        width: width,
-        height: height, // Add this line
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.grey,
-              blurRadius: 10,
-              offset: Offset(0, 8),
-              spreadRadius: 2.0,
-            )
-          ],
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Stack(
-          alignment: Alignment.topRight,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: backgroundColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    icon,
-                    size: 40,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 15),
-                Text(text2, style: AppTextStyle.blackF25FW500TextStyle),
-                Text(text, style: AppTextStyle.blackF18FW400TextStyle),
-                const SizedBox(height: 10),
-              ],
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                color: Colors.orange,
-                shape: BoxShape.circle,
-              ),
-              margin: const EdgeInsets.all(8),
-              child: const Icon(
-                Icons.edit_outlined,
-                color: Colors.white,
-                size: 20,
-              ),
-            ),
-          ],
         ),
       ),
     );

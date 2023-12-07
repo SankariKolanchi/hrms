@@ -139,12 +139,12 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomAppBarWidget(
-                      height: height * (20 / 100),
+                      height: height * (10 / 100),
                       showTitle: true,
                       showImage: true,
                     ),
                     Container(
-                      height: 20,
+                      height: 50,
                       decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(

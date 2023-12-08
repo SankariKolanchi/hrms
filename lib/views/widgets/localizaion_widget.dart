@@ -5,6 +5,8 @@ import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
 class LocalizationSettingsWidget extends StatelessWidget {
+  const LocalizationSettingsWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -13,13 +15,15 @@ class LocalizationSettingsWidget extends StatelessWidget {
       itemCount: 1,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (_, i) {
-        return LocalizationSettingsItem();
+        return const LocalizationSettingsItem();
       },
     );
   }
 }
 
 class LocalizationSettingsItem extends StatelessWidget {
+  const LocalizationSettingsItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

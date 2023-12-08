@@ -5,6 +5,8 @@ import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
 class InvoiceSettingsItem extends StatelessWidget {
+  const InvoiceSettingsItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -81,7 +83,7 @@ class InvoiceSettingsItem extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 3), // Add a SizedBox with a height of 3 between items
+        const SizedBox(height: 3), // Add a SizedBox with a height of 3 between items
       ],
     );
   }

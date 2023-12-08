@@ -25,7 +25,7 @@ class TimelineItem extends StatefulWidget {
   final String title;
   final String description;
 
-  const TimelineItem({required this.title, required this.description});
+  const TimelineItem({super.key, required this.title, required this.description});
 
   @override
   _TimelineItemState createState() => _TimelineItemState();

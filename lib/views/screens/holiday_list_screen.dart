@@ -86,10 +86,10 @@ class HolidayListScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
              const SizedBox(height: 10),
-            HolidayWidget(),
-             HolidayWidget(),
-              HolidayWidget(),
-               HolidayWidget(),
+            const HolidayWidget(),
+             const HolidayWidget(),
+              const HolidayWidget(),
+               const HolidayWidget(),
             
           ],
         ),
@@ -104,7 +104,7 @@ class HolidayListScreen extends StatelessWidget {
                 print('Bottom-right FloatingActionButton pressed!');
               },
               backgroundColor: Colors.orange,
-              child: Icon(Icons.add, color: Colors.white),
+              child: const Icon(Icons.add, color: Colors.white),
             ),
           ),
         ],

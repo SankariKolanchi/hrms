@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/custom_card_widget.dart';
 import '../widgets/drawer_widget.dart';
-import 'employee_screen.dart';
 import 'profile_screen.dart';
 import 'settings_scree.dart';
 
@@ -15,20 +14,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     final height = MediaQuery.of(context).size.height;
     final topBarHeight = height * (30 / 100);
 
     return SafeArea(
       child: Scaffold(
-        key: _scaffoldKey,
+        key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.indigo,
           leading: InkWell(
             onTap: () {
-              _scaffoldKey.currentState?.openDrawer();
+              scaffoldKey.currentState?.openDrawer();
             },
             child: const Icon(
               Icons.menu,
@@ -126,7 +125,7 @@ class HomeScreen extends StatelessWidget {
           ],
           toolbarHeight: 150,
         ),
-        drawer: DrawerScreen(),
+        drawer: const DrawerScreen(),
         body: SizedBox(
           height: height,
           child: Stack(

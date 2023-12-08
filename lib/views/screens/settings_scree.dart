@@ -9,7 +9,7 @@ import '../widgets/password_widget.dart';
 import '../widgets/salary_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key});
+  const SettingsScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +88,12 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            ChangePasswordSettingsWidget(),
-            CompanyNameSettingsWidget(),
-            LocalizationSettingsWidget(),
-            EmailSettingsWidget(),
-            InvoiceSettingsItem(),
-            SalaryItem(),
+            const ChangePasswordSettingsWidget(),
+            const CompanyNameSettingsWidget(),
+            const LocalizationSettingsWidget(),
+            const EmailSettingsWidget(),
+            const InvoiceSettingsItem(),
+            const SalaryItem(),
           ],
         ),
       ),

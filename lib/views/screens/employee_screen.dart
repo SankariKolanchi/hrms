@@ -47,7 +47,7 @@ class EmployeeScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HolidayListScreen(),
+                            builder: (context) => const HolidayListScreen(),
                           ),
                         );
                       },
@@ -135,7 +135,7 @@ class EmployeeScreen extends StatelessWidget {
                 print('Bottom-right FloatingActionButton pressed!');
               },
               backgroundColor: Colors.orange,
-              child: Icon(Icons.add, color: Colors.white),
+              child: const Icon(Icons.add, color: Colors.white),
             ),
           ),
         

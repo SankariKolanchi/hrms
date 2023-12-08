@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class HolidayWidget extends StatelessWidget {
+  const HolidayWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -12,7 +14,7 @@ class HolidayWidget extends StatelessWidget {
         itemCount: 1,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (_, i) {
-          return HolidayItem();
+          return const HolidayItem();
         },
       ),
     );
@@ -20,6 +22,8 @@ class HolidayWidget extends StatelessWidget {
 }
 
 class HolidayItem extends StatelessWidget {
+  const HolidayItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,11 +36,11 @@ class HolidayItem extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(15),
       ),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Childrens day '),
-                 const Text('NOv 19 '),
+          Text('Childrens day '),
+                 Text('NOv 19 '),
         ],
       ),
     );

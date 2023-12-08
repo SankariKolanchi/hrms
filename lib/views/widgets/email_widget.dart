@@ -5,6 +5,8 @@ import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
 class EmailSettingsWidget extends StatelessWidget {
+  const EmailSettingsWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -13,13 +15,15 @@ class EmailSettingsWidget extends StatelessWidget {
       itemCount: 1,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (_, i) {
-        return EmailSettingsItem();
+        return const EmailSettingsItem();
       },
     );
   }
 }
 
 class EmailSettingsItem extends StatelessWidget {
+  const EmailSettingsItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

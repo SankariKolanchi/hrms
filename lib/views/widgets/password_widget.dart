@@ -6,11 +6,13 @@ import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
 class ChangePasswordSettingsWidget extends StatelessWidget {
+  const ChangePasswordSettingsWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => EmployeeScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const EmployeeScreen()));
       },
       child: ListView.builder(
         padding: const EdgeInsets.all(15),
@@ -18,7 +20,7 @@ class ChangePasswordSettingsWidget extends StatelessWidget {
         itemCount: 1,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (_, i) {
-          return ChangePasswordSettingsItem();
+          return const ChangePasswordSettingsItem();
         },
       ),
     );
@@ -26,6 +28,8 @@ class ChangePasswordSettingsWidget extends StatelessWidget {
 }
 
 class ChangePasswordSettingsItem extends StatelessWidget {
+  const ChangePasswordSettingsItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

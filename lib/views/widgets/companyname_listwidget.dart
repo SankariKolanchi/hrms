@@ -6,6 +6,8 @@ import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
 class CompanyNameSettingsWidget extends StatelessWidget {
+  const CompanyNameSettingsWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -15,7 +17,7 @@ class CompanyNameSettingsWidget extends StatelessWidget {
         itemCount: 1,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (_, i) {
-          return CompanyNameSettingsItem();
+          return const CompanyNameSettingsItem();
         },
       ),
     );
@@ -23,6 +25,8 @@ class CompanyNameSettingsWidget extends StatelessWidget {
 }
 
 class CompanyNameSettingsItem extends StatelessWidget {
+  const CompanyNameSettingsItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

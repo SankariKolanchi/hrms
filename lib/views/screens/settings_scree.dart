@@ -5,6 +5,7 @@ import '../widgets/companyname_listwidget.dart';
 import '../widgets/email_widget.dart';
 import '../widgets/invoice_widget.dart';
 import '../widgets/localizaion_widget.dart';
+import '../widgets/notification_widgets.dart';
 import '../widgets/password_widget.dart';
 import '../widgets/salary_widget.dart';
 
@@ -92,8 +93,9 @@ class SettingsScreen extends StatelessWidget {
             const CompanyNameSettingsWidget(),
             const LocalizationSettingsWidget(),
             const EmailSettingsWidget(),
-            const InvoiceSettingsItem(),
-            const SalaryItem(),
+            const InvoiceSettingsWidget(),
+            const SalaryItemWidget(),
+           const  NotificationWidget(),
           ],
         ),
       ),

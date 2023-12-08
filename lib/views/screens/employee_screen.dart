@@ -73,7 +73,7 @@ class EmployeeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                       CustomCardWithIconWidget(
+                  CustomCardWithIconWidget(
                     icon: Icons.person,
                     backgroundColor: Colors.grey,
                     text: "Team leader",
@@ -127,18 +127,17 @@ class EmployeeScreen extends StatelessWidget {
                     width: cardWidth,
                     height: 180,
                   ),
-                Positioned(
-            bottom: 16,
-            right: 16,
-            child: FloatingActionButton(
-              onPressed: () {
-                print('Bottom-right FloatingActionButton pressed!');
-              },
-              backgroundColor: Colors.orange,
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
-          ),
-        
+                  Positioned(
+                    bottom: 16,
+                    right: 16,
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        print('Bottom-right FloatingActionButton pressed!');
+                      },
+                      backgroundColor: Colors.orange,
+                      child: const Icon(Icons.add, color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),

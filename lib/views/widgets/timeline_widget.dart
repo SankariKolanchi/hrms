@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TimelineScreen extends StatelessWidget {
-  const TimelineScreen({Key? key}) : super(key: key);
+class TimelineWidget extends StatelessWidget {
+  const TimelineWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +80,4 @@ class _TimelineItemState extends State<TimelineItem> {
   }
 }
 
-void main() {
-  runApp(const TimelineScreen());
-}
+

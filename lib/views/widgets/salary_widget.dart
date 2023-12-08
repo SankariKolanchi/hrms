@@ -4,8 +4,8 @@ import '../themes/app_text_style.dart';
 import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
-class SalaryItem extends StatelessWidget {
-  const SalaryItem({super.key});
+class SalaryItemWidget extends StatelessWidget {
+  const SalaryItemWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

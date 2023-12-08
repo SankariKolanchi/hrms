@@ -4,8 +4,8 @@ import '../themes/app_text_style.dart';
 import 'app_button_widget.dart';
 import 'app_textfield.dart';
 
-class InvoiceSettingsItem extends StatelessWidget {
-  const InvoiceSettingsItem({super.key});
+class InvoiceSettingsWidget extends StatelessWidget {
+  const InvoiceSettingsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

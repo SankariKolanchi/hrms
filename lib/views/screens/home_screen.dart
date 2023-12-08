@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../widgets/custom_appbar.dart';
 import '../widgets/custom_card_widget.dart';
 import '../widgets/drawer_widget.dart';
@@ -125,7 +124,7 @@ class HomeScreen extends StatelessWidget {
           ],
           toolbarHeight: 150,
         ),
-        drawer: const DrawerScreen(),
+        drawer: const DrawerWidget(),
         body: SizedBox(
           height: height,
           child: Stack(
@@ -206,6 +205,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-

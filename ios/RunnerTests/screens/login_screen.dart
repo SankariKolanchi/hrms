@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/views/screens/forgot_password_screen.dart';
-import 'package:hrms/views/screens/registration_screen.dart';
+import 'package:hrms/views/screens/onboarding/forgot_password_screen.dart';
+import 'package:hrms/views/screens/onboarding/registration_screen.dart';
 
-import 'package:hrms/views/widgets/app_topbar_widget.dart';
+import 'package:hrms/views/widgets/common_widget.dart/app_topbar_widget.dart';
 
 import '../../../lib/views/themes/app_text_style.dart';
-import '../../../lib/views/widgets/app_button_widget.dart';
-import '../../../lib/views/widgets/app_textfield.dart';
+import '../../../lib/views/widgets/common_widget.dart/app_button_widget.dart';
+import '../../../lib/views/widgets/common_widget.dart/app_textfield.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

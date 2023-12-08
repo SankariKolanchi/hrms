@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_colors.dart';
-import '../themes/app_text_style.dart';
-import 'app_button_widget.dart';
-import 'app_textfield.dart';
+import '../../themes/app_colors.dart';
+import '../../themes/app_text_style.dart';
+import '../common_widget.dart/app_button_widget.dart';
+import '../common_widget.dart/app_textfield.dart';
 
 class CompanyNameSettingsWidget extends StatelessWidget {
   const CompanyNameSettingsWidget({super.key});

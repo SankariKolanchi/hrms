@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:hrms/views/widgets/app_button_widget.dart';
+import 'package:hrms/views/widgets/common_widget.dart/app_button_widget.dart';
 
-import '../themes/app_text_style.dart';
+import '../../themes/app_text_style.dart';
 
-import '../widgets/app_textfield.dart';
-import '../widgets/app_topbar_widget.dart';
+import '../../widgets/common_widget.dart/app_textfield.dart';
+import '../../widgets/common_widget.dart/app_topbar_widget.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {

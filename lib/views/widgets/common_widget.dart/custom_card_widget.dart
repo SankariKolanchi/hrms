@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_text_style.dart';
+import '../../themes/app_text_style.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final String image;

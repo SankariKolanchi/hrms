@@ -17,7 +17,7 @@ class CustomCardWithIconWidget extends StatelessWidget {
     required this.icon,
     required this.position,
     required this.width,
-    required this.height,
+    required this.height, required bool showIcons,
   }) : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class CustomCardWithIconWidget extends StatelessWidget {
             BoxShadow(
               color: Colors.grey,
               blurRadius: 10,
-              offset: Offset(0, 8),
+              offset: Offset(10, 8),
               spreadRadius: 2.0,
             )
           ],
@@ -70,7 +70,7 @@ class _CardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topRight,
+      alignment: Alignment.center,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,12 +90,21 @@ class _CardContent extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            const Text('text2', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
-            const Text('text', style:  TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
+            Text(text2, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
+            Text(text, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
             const SizedBox(height: 10),
           ],
         ),
-        const _EditButton(),
+        Positioned(
+          top: 0,
+          right: 0,
+          child: const _EditButton(),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          child: const _DeleteButton(),
+        ),
       ],
     );
   }
@@ -107,13 +116,38 @@ class _EditButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topRight,
+      decoration: const BoxDecoration(
+        color: Colors.orange,
+        shape: BoxShape.circle,
+      ),
+      margin: const EdgeInsets.all(8),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 0,right: 0,top: 0),
+        child: const Icon(
+          Icons.edit_outlined,
+          color: Colors.white,
+          size: 20,
+        ),
+      ),
+    );
+ 
+  }
+}
+
+class _DeleteButton extends StatelessWidget {
+  const _DeleteButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       decoration: const BoxDecoration(
         color: Colors.orange,
         shape: BoxShape.circle,
       ),
       margin: const EdgeInsets.all(8),
       child: const Icon(
-        Icons.edit_outlined,
+        Icons.delete,
         color: Colors.white,
         size: 20,
       ),

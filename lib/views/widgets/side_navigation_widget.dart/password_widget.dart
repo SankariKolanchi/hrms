@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_text_style.dart';
-import 'app_button_widget.dart';
-import 'app_textfield.dart';
+import '../../screens/drawer_employees/all_employee_screen.dart';
+import '../../themes/app_text_style.dart';
+import '../common_widget.dart/app_button_widget.dart';
+import '../common_widget.dart/app_textfield.dart';
 
-class NotificationWidget extends StatelessWidget {
-  const NotificationWidget({super.key});
+class ChangePasswordSettingsWidget extends StatelessWidget {
+  const ChangePasswordSettingsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.all(15),
-      shrinkWrap: true,
-      itemCount: 1,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (_, i) {
-        return const NotificationItem();
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const EmployeeScreen()));
       },
+      child: ListView.builder(
+        padding: const EdgeInsets.all(15),
+        shrinkWrap: true,
+        itemCount: 1,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (_, i) {
+          return const ChangePasswordSettingsItem();
+        },
+      ),
     );
   }
 }
 
-class NotificationItem extends StatelessWidget {
-  const NotificationItem({super.key});
+class ChangePasswordSettingsItem extends StatelessWidget {
+  const ChangePasswordSettingsItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +45,7 @@ class NotificationItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Notification'),
+          const Text('Change Password'),
           InkWell(
             onTap: () {
               showModalBottomSheet(
@@ -61,35 +67,23 @@ class NotificationItem extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               const AppTextFieldWidget(
-                                hintText: "Employee",
+                                hintText: "Old password",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),
                               const AppTextFieldWidget(
-                                hintText: "Holiday",
+                                hintText: "New password",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),
                               const AppTextFieldWidget(
-                                hintText: "Leave request",
+                                hintText: "Confirm password",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
-                              const SizedBox(height: 16.0),
-                              const AppTextFieldWidget(
-                                hintText: "Events",
-                                textStyle: AppTextStyle.blackF14FW500TextStyle,
-                              ),
-                              const SizedBox(height: 16.0),
-                              const AppTextFieldWidget(
-                                hintText: "chats",
-                                textStyle: AppTextStyle.blackF14FW500TextStyle,
-                              ),
-                              const SizedBox(height: 16.0),
-                              
                               const SizedBox(height: 16.0),
                               AppButtonWidget(
                                 onTap: () {},
-                                title: "Save",
+                                title: "UPDATE PASSWORD",
                               ),
                             ],
                           ),

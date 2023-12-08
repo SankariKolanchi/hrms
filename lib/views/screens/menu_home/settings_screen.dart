@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 
-import '../widgets/companyname_listwidget.dart';
-import '../widgets/email_widget.dart';
-import '../widgets/invoice_widget.dart';
-import '../widgets/localizaion_widget.dart';
-import '../widgets/notification_widgets.dart';
-import '../widgets/password_widget.dart';
-import '../widgets/salary_widget.dart';
+import '../../widgets/side_navigation_widget.dart/companyname_listwidget.dart';
+import '../../widgets/side_navigation_widget.dart/email_widget.dart';
+import '../../widgets/side_navigation_widget.dart/invoice_widget.dart';
+import '../../widgets/side_navigation_widget.dart/localizaion_widget.dart';
+import '../../widgets/side_navigation_widget.dart/notification_widgets.dart';
+import '../../widgets/side_navigation_widget.dart/password_widget.dart';
+import '../../widgets/side_navigation_widget.dart/salary_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key,});

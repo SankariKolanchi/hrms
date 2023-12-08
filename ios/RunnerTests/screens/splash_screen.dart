@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hrms/views/screens/drawer_employees/attendences_screen.dart';
 
 
 import 'dart:async';
 
-import 'package:hrms/views/screens/registration_screen.dart';
+import 'package:hrms/views/screens/onboarding/registration_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const RegisterScreen(),
+          builder: (context) => const AttendenceScreen(),
         ),
       );
     });

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/card_widget.dart';
-import '../widgets/custom_appbar.dart';
+import '../../widgets/side_navigation_widget.dart/employee_card_widget.dart';
+import '../../widgets/common_widget.dart/custom_appbar.dart';
 import 'holiday_list_screen.dart';
 
 class EmployeeScreen extends StatelessWidget {
@@ -73,6 +73,7 @@ class EmployeeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                 
                   CustomCardWithIconWidget(
                     icon: Icons.person,
                     backgroundColor: Colors.grey,
@@ -80,8 +81,9 @@ class EmployeeScreen extends StatelessWidget {
                     text2: "John",
                     position: Offset(30 + cardWidth - 170, topBarHeight - 130),
                     width: cardWidth,
-                    height: 180,
+                    height: 180, showIcons: true,
                   ),
+               
                   CustomCardWithIconWidget(
                     icon: Icons.person,
                     backgroundColor: Colors.grey,
@@ -89,7 +91,7 @@ class EmployeeScreen extends StatelessWidget {
                     text: "Mike Literous",
                     position: Offset(30 + cardWidth + 30, topBarHeight - 130),
                     width: cardWidth,
-                    height: 180,
+                    height: 180, showIcons: true,
                   ),
                   CustomCardWithIconWidget(
                     icon: Icons.person,
@@ -98,7 +100,7 @@ class EmployeeScreen extends StatelessWidget {
                     text2: "John",
                     position: Offset(30, topBarHeight + 140),
                     width: cardWidth,
-                    height: 180,
+                    height: 180, showIcons: true,
                   ),
                   CustomCardWithIconWidget(
                     icon: Icons.person,
@@ -107,7 +109,7 @@ class EmployeeScreen extends StatelessWidget {
                     text: "Mike Literous",
                     position: Offset(30 + cardWidth + 30, topBarHeight + 140),
                     width: cardWidth,
-                    height: 180,
+                    height: 180, showIcons: true,
                   ),
                   CustomCardWithIconWidget(
                     icon: Icons.person,
@@ -116,7 +118,7 @@ class EmployeeScreen extends StatelessWidget {
                     text2: "John",
                     position: Offset(30, topBarHeight + 400),
                     width: cardWidth,
-                    height: 180,
+                    height: 180, showIcons: true,
                   ),
                   CustomCardWithIconWidget(
                     icon: Icons.person,
@@ -125,7 +127,7 @@ class EmployeeScreen extends StatelessWidget {
                     text: "Mike Literous",
                     position: Offset(30 + cardWidth + 30, topBarHeight + 400),
                     width: cardWidth,
-                    height: 180,
+                    height: 180, showIcons: true,
                   ),
                   Positioned(
                     bottom: 16,

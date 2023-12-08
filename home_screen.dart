@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/common_widget.dart/custom_appbar.dart';
-import '../widgets/common_widget.dart/custom_card_widget.dart';
-import '../widgets/side_navigation_widget.dart/drawer_widget.dart';
-
-import 'drawer_employees/attendences_screen.dart';
-import 'menu_home/settings_screen.dart';
+import 'lib/views/widgets/common_widget.dart/custom_appbar.dart';
+import 'lib/views/widgets/common_widget.dart/custom_card_widget.dart';
+import 'lib/views/widgets/side_navigation_widget.dart/drawer_widget.dart';
+import 'lib/views/screens/menu_home/profile_screen.dart';
+import 'lib/views/screens/menu_home/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -17,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     final height = MediaQuery.of(context).size.height;
-    final topBarHeight = height * (18 / 100);
+    final topBarHeight = height * (30 / 100);
 
     return SafeArea(
       child: Scaffold(
@@ -54,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        const SettingsScreen(),
+                                        const MyProfileScreen(),
                                   ),
                                 );
                               },
@@ -138,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomAppBarWidget(
-                      height: height * (8/ 100),
+                      height: height * (10 / 100),
                       showTitle: true,
                       showImage: true,
                     ),
@@ -199,12 +198,9 @@ class HomeScreen extends StatelessWidget {
                   text: "Invoices",
                 ),
               ),
-           
             ],
           ),
-     
         ),
-      
       ),
     );
   }

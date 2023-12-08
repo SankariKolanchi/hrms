@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_text_style.dart';
-import 'app_button_widget.dart';
-import 'app_textfield.dart';
+import '../../themes/app_text_style.dart';
+import '../common_widget.dart/app_button_widget.dart';
+import '../common_widget.dart/app_textfield.dart';
 
-class LocalizationSettingsWidget extends StatelessWidget {
-  const LocalizationSettingsWidget({super.key});
+class EmailSettingsWidget extends StatelessWidget {
+  const EmailSettingsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +15,14 @@ class LocalizationSettingsWidget extends StatelessWidget {
       itemCount: 1,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (_, i) {
-        return const LocalizationSettingsItem();
+        return const EmailSettingsItem();
       },
     );
   }
 }
 
-class LocalizationSettingsItem extends StatelessWidget {
-  const LocalizationSettingsItem({super.key});
+class EmailSettingsItem extends StatelessWidget {
+  const EmailSettingsItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class LocalizationSettingsItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Localization'),
+          const Text('Email Settings'),
           InkWell(
             onTap: () {
               showModalBottomSheet(
@@ -61,22 +61,22 @@ class LocalizationSettingsItem extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               const AppTextFieldWidget(
-                                hintText: "USA",
+                                hintText: "pHp mail",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),
                               const AppTextFieldWidget(
-                                hintText: "12/06/2023",
+                                hintText: "SMIP",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),
                               const AppTextFieldWidget(
-                                hintText: "(UTC+5.30)Antartica palmer",
+                                hintText: "Email from address",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),
                               const AppTextFieldWidget(
-                                hintText: "English",
+                                hintText: "Email from name",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),
@@ -86,7 +86,34 @@ class LocalizationSettingsItem extends StatelessWidget {
                               ),
                               const SizedBox(height: 16.0),
                               const AppTextFieldWidget(
-                                hintText: "dollar",
+                                hintText: "SMIP HOST",
+                                textStyle: AppTextStyle.blackF14FW500TextStyle,
+                              ),
+                              const SizedBox(height: 16.0),
+                              const AppTextFieldWidget(
+                                hintText: "SMIP USER",
+                                textStyle: AppTextStyle.blackF14FW500TextStyle,
+                              ),
+                              const SizedBox(height: 16.0),
+                              const SizedBox(height: 16.0),
+                              const AppTextFieldWidget(
+                                hintText: "SMIP PASSWORD",
+                                textStyle: AppTextStyle.blackF14FW500TextStyle,
+                              ),
+                              const SizedBox(height: 16.0),
+                              const AppTextFieldWidget(
+                                hintText: "SMIP Security",
+                                textStyle: AppTextStyle.blackF14FW500TextStyle,
+                              ),
+                              const SizedBox(height: 16.0),
+                              const SizedBox(height: 16.0),
+                              const AppTextFieldWidget(
+                                hintText: "SMIP USER",
+                                textStyle: AppTextStyle.blackF14FW500TextStyle,
+                              ),
+                              const SizedBox(height: 16.0),
+                              const AppTextFieldWidget(
+                                hintText: "SMIP Authentication",
                                 textStyle: AppTextStyle.blackF14FW500TextStyle,
                               ),
                               const SizedBox(height: 16.0),

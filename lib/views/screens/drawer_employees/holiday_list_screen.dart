@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
 
-import '../widgets/holiday_widgets.dart';
+import '../../widgets/side_navigation_widget.dart/holiday_widgets.dart';
+
+// Import AttendenceScreen
 
 class HolidayListScreen extends StatelessWidget {
   const HolidayListScreen({Key? key}) : super(key: key);
@@ -32,29 +35,31 @@ class HolidayListScreen extends StatelessWidget {
           children: [
             Container(
               color: Colors.indigo,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18.0),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Go to calendar',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              )),
-                          Icon(
+                          const Text(
+                            'Go to calendar',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const Icon(
                             Icons.calendar_view_day_rounded,
                             size: 30,
                             color: Colors.white,
                           )
                         ],
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
@@ -92,7 +97,9 @@ class HolidayListScreen extends StatelessWidget {
             const HolidayWidget(),
           ],
         ),
+     
       ),
+
       floatingActionButton: Stack(
         children: [
           Positioned(

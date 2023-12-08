@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_text_style.dart';
-import 'app_button_widget.dart';
-import 'app_textfield.dart';
+import '../../themes/app_text_style.dart';
+import '../common_widget.dart/app_button_widget.dart';
+import '../common_widget.dart/app_textfield.dart';
 
-class SalaryItemWidget extends StatelessWidget {
-  const SalaryItemWidget({super.key});
+class InvoiceSettingsWidget extends StatelessWidget {
+  const InvoiceSettingsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SalaryItemWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Salary'),
+              const Text('Invoice settings'),
               InkWell(
                 onTap: () {
                   showModalBottomSheet(
@@ -46,15 +46,20 @@ class SalaryItemWidget extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const AppTextFieldWidget(
-                                    hintText: "DA",
+                                    hintText: "Invoice logo",
                                     textStyle: AppTextStyle.blackF14FW500TextStyle,
                                   ),
                                   const SizedBox(height: 16.0),
                                   const AppTextFieldWidget(
-                                    hintText: "hra",
+                                    hintText: "Inv",
                                     textStyle: AppTextStyle.blackF14FW500TextStyle,
                                   ),
-                                  // Add more AppTextFieldWidget widgets as needed
+                                  const SizedBox(height: 16.0),
+                                  const AppTextFieldWidget(
+                                    hintText: "No file chosen",
+                                    textStyle: AppTextStyle.blackF14FW500TextStyle,
+                                  ),
+                                  const SizedBox(height: 16.0),
                                   const SizedBox(height: 16.0),
                                   AppButtonWidget(
                                     onTap: () {},
@@ -74,7 +79,7 @@ class SalaryItemWidget extends StatelessWidget {
                   size: 15,
                   color: Colors.orange,
                 ),
-              ),
+              )
             ],
           ),
         ),

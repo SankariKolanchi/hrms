@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../themes/app_text_style.dart';
-import 'app_button_widget.dart';
-import 'app_textfield.dart';
+import '../../themes/app_text_style.dart';
+import '../common_widget.dart/app_button_widget.dart';
+import '../common_widget.dart/app_textfield.dart';
 
-class InvoiceSettingsWidget extends StatelessWidget {
-  const InvoiceSettingsWidget({super.key});
+class SalaryItemWidget extends StatelessWidget {
+  const SalaryItemWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class InvoiceSettingsWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Invoice settings'),
+              const Text('Salary'),
               InkWell(
                 onTap: () {
                   showModalBottomSheet(
@@ -46,20 +46,15 @@ class InvoiceSettingsWidget extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const AppTextFieldWidget(
-                                    hintText: "Invoice logo",
+                                    hintText: "DA",
                                     textStyle: AppTextStyle.blackF14FW500TextStyle,
                                   ),
                                   const SizedBox(height: 16.0),
                                   const AppTextFieldWidget(
-                                    hintText: "Inv",
+                                    hintText: "hra",
                                     textStyle: AppTextStyle.blackF14FW500TextStyle,
                                   ),
-                                  const SizedBox(height: 16.0),
-                                  const AppTextFieldWidget(
-                                    hintText: "No file chosen",
-                                    textStyle: AppTextStyle.blackF14FW500TextStyle,
-                                  ),
-                                  const SizedBox(height: 16.0),
+                                  // Add more AppTextFieldWidget widgets as needed
                                   const SizedBox(height: 16.0),
                                   AppButtonWidget(
                                     onTap: () {},
@@ -79,7 +74,7 @@ class InvoiceSettingsWidget extends StatelessWidget {
                   size: 15,
                   color: Colors.orange,
                 ),
-              )
+              ),
             ],
           ),
         ),

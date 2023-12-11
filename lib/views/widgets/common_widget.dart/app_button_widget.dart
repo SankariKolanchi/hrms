@@ -8,9 +8,11 @@ class AppButtonWidget extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
+    this.color = AppColors.orangeColor,
   });
   final Function() onTap;
   final String title;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +22,13 @@ class AppButtonWidget extends StatelessWidget {
         height: 55,
         alignment: Alignment.center,
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  color: AppColors.orangeColor.withOpacity(0.5),
-                  blurRadius: 10,
-                  offset: const Offset(-7, 10),
-                  spreadRadius: 1.0)
-            ],
-            color: AppColors.orangeColor,
-            borderRadius: BorderRadius.circular(15.0)),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              color: color.withOpacity(0.5),
+              blurRadius: 10,
+              offset: const Offset(-7, 10),
+              spreadRadius: 1.0)
+        ], color: color, borderRadius: BorderRadius.circular(15.0)),
         child: Text(
           title,
           style: AppTextStyle.whiteF22FW500TextStyle,

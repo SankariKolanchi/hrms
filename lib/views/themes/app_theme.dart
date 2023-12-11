@@ -14,9 +14,9 @@ sealed class AppTheme {
     dividerTheme:
         const DividerThemeData(thickness: 0.8, color: AppColors.greyColor),
     appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.blueColor,
         centerTitle: false,
-        elevation: 1,
-        scrolledUnderElevation: 0.5),
+        elevation: 0,
+        scrolledUnderElevation: 0),
   );
 }

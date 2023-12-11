@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hrms/views/themes/app_theme.dart';
 
-
 import 'views/screens/splash_screen.dart';
 
 void main() {
@@ -17,10 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'HRMS',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.appTheme,
-       home: const SplashScreen(),
-      //colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blueColor),
-       // useMaterial3: true,
-      );
-     
+      home: const SplashScreen(),
+      // colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blueColor),
+      // useMaterial3: true,
+    );
   }
 }

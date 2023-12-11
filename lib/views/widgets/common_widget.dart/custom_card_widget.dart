@@ -3,16 +3,21 @@ import 'package:flutter/material.dart';
 import '../../themes/app_text_style.dart';
 
 class CustomCardWidget extends StatelessWidget {
-  final String image;
-  final String text;
-  final String text2;
-
   const CustomCardWidget({
     Key? key,
+    required this.onTap,
     required this.image,
     required this.text,
     required this.text2,
   }) : super(key: key);
+
+  final String image;
+  final String text;
+
+  ///TODO
+  ///given meaningful name always
+  final String text2;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,20 +36,23 @@ class CustomCardWidget extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            image,
-            width: 60,
-            height: 60,
-            alignment: Alignment.center,
-          ),
-          const SizedBox(height: 15),
-          Text(text2, style: AppTextStyle.blackF25FW500TextStyle),
-          Text(text, style: AppTextStyle.blackF18FW400TextStyle)
-        ],
+      child: InkWell(
+        onTap: () => onTap(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              image,
+              width: 60,
+              height: 60,
+              alignment: Alignment.center,
+            ),
+            const SizedBox(height: 15),
+            Text(text2, style: AppTextStyle.blackF25FW500TextStyle),
+            Text(text, style: AppTextStyle.blackF18FW400TextStyle)
+          ],
+        ),
       ),
     );
   }

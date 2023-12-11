@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/views/themes/app_text_style.dart';
+
+import '../../themes/app_text_style.dart';
 
 import 'custom_appbar.dart';
 
@@ -14,11 +15,14 @@ class AppTopBarWidget extends StatelessWidget {
     final topBarHeight = height * (30 / 100);
 
     return SizedBox(
-   
       height: topBarHeight,
       child: Stack(
         children: [
-          CustomAppBarWidget(height: topBarHeight - 10, showTitle: true, showImage: true,),
+          CustomAppBarWidget(
+            height: topBarHeight - 10,
+            showTitle: true,
+            showImage: true,
+          ),
           Positioned(
             bottom: 0,
             right: 0,
@@ -58,4 +62,3 @@ class AppTopBarWidget extends StatelessWidget {
     );
   }
 }
-

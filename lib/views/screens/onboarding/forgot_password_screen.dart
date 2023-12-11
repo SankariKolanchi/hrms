@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/views/screens/drawer_employees/attendences_list_screen.dart';
-
 
 import '../../themes/app_text_style.dart';
 import '../../widgets/common_widget.dart/app_button_widget.dart';
 import '../../widgets/common_widget.dart/app_textfield.dart';
 import '../../widgets/common_widget.dart/app_topbar_widget.dart';
-
-import '../home_screen.dart';
+import '../dashboard/home_screen copy.dart';
+import '../employees/holiday_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({
@@ -45,7 +43,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AttendenceListScreen()));
+                          builder: (context) => const HolidayScreen()));
                 },
                 child: const Text(
                   "Back to login",

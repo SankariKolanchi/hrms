@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
+
+import '../../themes/app_colors.dart';
 import '../../themes/app_text_style.dart';
 
 class CustomAppBarWidget extends StatelessWidget {
   const CustomAppBarWidget({
     Key? key,
-    this.height, required this.showTitle, required this.showImage,
-
+    this.height,
+    required this.showTitle,
+    required this.showImage,
   }) : super(key: key);
 
   final double? height;
   final bool showTitle;
   final bool showImage;
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
         height: height,
         alignment: Alignment.center,
-        decoration: const BoxDecoration(
-          color: Colors.indigo,
-        ),
+        decoration: const BoxDecoration(color: AppColors.blueColor),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,4 +44,3 @@ class CustomAppBarWidget extends StatelessWidget {
         ));
   }
 }
-

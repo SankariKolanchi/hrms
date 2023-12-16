@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../themes/app_text_style.dart';
-import '../../widgets/common_widget.dart/app_button_widget.dart';
-import '../../widgets/common_widget.dart/app_textfield.dart';
-import '../../widgets/common_widget.dart/app_topbar_widget.dart';
-import '../dashboard/home_screen copy.dart';
-import '../employees/holiday_screen.dart';
+import '../../widgets/app_button_widget.dart';
+import '../../widgets/app_textfield.dart';
+import '../../widgets/app_topbar_widget.dart';
+import '../dashboard/home_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({
@@ -18,9 +17,7 @@ class ForgotPasswordScreen extends StatelessWidget {
       body: Column(children: [
         const AppTopBarWidget(title: "FORGOT PASSWORD"),
         Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 25,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(children: [
             const SizedBox(height: 35),
             const AppTextFieldWidget(
@@ -43,7 +40,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HolidayScreen()));
+                          builder: (context) => const HomeScreen()));
                 },
                 child: const Text(
                   "Back to login",

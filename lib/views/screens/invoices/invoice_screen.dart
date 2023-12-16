@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/utilis/app_ui_constants.dart';
-import 'package:hrms/views/screens/invoices/invoice_add_widget.dart';
+
 import 'package:timelines/timelines.dart';
 
 import '../../themes/app_colors.dart';
+import 'view_invoice.dart';
 
 class InvocieScreen extends StatelessWidget {
   const InvocieScreen({super.key});
@@ -14,13 +14,11 @@ class InvocieScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Invoices',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          AppUiConstants.baseBottomSheet(context, InvoiceAddWidget());
-        },
+        onPressed: () {},
         backgroundColor: Colors.orange,
         child: const Icon(Icons.add, color: Colors.white),
       ),
@@ -89,14 +87,21 @@ class InvocieScreen extends StatelessWidget {
               builder: TimelineTileBuilder.fromStyle(
                 contentsAlign: ContentsAlign.basic,
                 nodePositionBuilder: (context, index) => 0.05,
-                contentsBuilder: (context, index) => const Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: InvoiceItemWidget(),
+                contentsBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: InvoiceItemWidget(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const ViewInvoice(isPaid: true)));
+                    },
+                  ),
                 ),
                 itemCount: 10,
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 15)
           ],
         ),
       ),
@@ -105,8 +110,8 @@ class InvocieScreen extends StatelessWidget {
 }
 
 class InvoiceItemWidget extends StatelessWidget {
-  const InvoiceItemWidget({super.key});
-
+  const InvoiceItemWidget({super.key, required this.onTap});
+  final Function onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -118,37 +123,40 @@ class InvoiceItemWidget extends StatelessWidget {
           boxShadow: const [
             BoxShadow(color: Colors.grey, blurRadius: 0.5, spreadRadius: 1)
           ]),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Text('#Invoice001'),
-                  const SizedBox(width: 6),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(15)),
-                    child: const Text(
-                      'Paid',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                          fontWeight: FontWeight.w400),
-                    ),
-                  )
-                ],
-              ),
-              const Text('Global Technologies'),
-            ],
-          ),
-          const Text('Rs.5000')
-        ],
+      child: InkWell(
+        onTap: () => onTap(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Text('#Invoice001'),
+                    const SizedBox(width: 6),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4, vertical: 2),
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const Text(
+                        'Paid',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    )
+                  ],
+                ),
+                const Text('Global Technologies'),
+              ],
+            ),
+            const Text('Rs.5000')
+          ],
+        ),
       ),
     );
   }

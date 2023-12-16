@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hrms/views/screens/onboarding/forgot_password_screen.dart';
 import 'package:hrms/views/screens/onboarding/registration_screen.dart';
-
-import 'package:hrms/views/widgets/common_widget.dart/app_topbar_widget.dart';
-
-import '../../../lib/views/themes/app_text_style.dart';
-import '../../../lib/views/widgets/common_widget.dart/app_button_widget.dart';
-import '../../../lib/views/widgets/common_widget.dart/app_textfield.dart';
+import 'package:hrms/views/themes/app_text_style.dart';
+import 'package:hrms/views/widgets/app_button_widget.dart';
+import 'package:hrms/views/widgets/app_textfield.dart';
+import 'package:hrms/views/widgets/app_topbar_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -58,9 +56,13 @@ class LoginScreen extends StatelessWidget {
                                       const ForgotPasswordScreen()));
                         },
                         child: InkWell(
-                            onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const RegisterScreen()));
-                  },
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const RegisterScreen()));
+                          },
                           child: const Text(
                             'Sign Up ',
                             style: AppTextStyle.orangeF11FW500TextStyle,
@@ -74,11 +76,15 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                   Center(
+                  Center(
                     child: InkWell(
-                      onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPasswordScreen()));
-                  },
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ForgotPasswordScreen()));
+                      },
                       child: const Text(
                         'Forgot Password?',
                         style: AppTextStyle.orangeF11FW500TextStyle,

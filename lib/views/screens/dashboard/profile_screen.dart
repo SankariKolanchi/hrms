@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../themes/app_colors.dart';
 import '../../widgets/common_widget.dart/profile_image_widget.dart';
+import '../employees/timeline_tabtwo_.dart';
 
 class MyProfileScreen extends StatelessWidget {
   const MyProfileScreen({super.key});
@@ -11,7 +12,7 @@ class MyProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Employee Profile',
+          'Leaves',
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -84,99 +85,39 @@ class MyProfileScreen extends StatelessWidget {
                       const Padding(
                         padding:
                             EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                        child: Text('Personal Info'),
-                      ),
-                      Expanded(
-                        child: ListView.separated(
-                            itemCount: 10,
-                            separatorBuilder: (_, i) {
-                              return const Divider();
-                            },
-                            itemBuilder: (_, i) {
-                              return const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('EmployeeId'),
-                                    Text('102'),
-                                  ],
-                                ),
-                              );
-                            }),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 10.0, horizontal: 8),
                         child: Text('Education Info'),
                       ),
                       Expanded(
                         child: ListView.separated(
-                            itemCount: 10,
-                            separatorBuilder: (_, i) {
-                              return const Divider();
-                            },
-                            itemBuilder: (_, i) {
-                              return const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('2003-2007'),
-                                    Text(
-                                        'International College of Arts & Science (UG)'),
-                                    Text('Bsc Computer Science'),
-                                  ],
-                                ),
-                              );
-                            }),
+                          itemCount: 10,
+                          separatorBuilder: (_, i) {
+                            return const Divider();
+                          },
+                          itemBuilder: (_, i) {
+                            return const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('2003-2007'),
+                                  Text(
+                                      'International College of Arts & Science (UG)'),
+                                  Text('Bsc Computer Science'),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15.0, horizontal: 3),
-                        child: Text('Education Info'),
-                      ),
-                      Expanded(
-                        child: ListView.separated(
-                            itemCount: 10,
-                            separatorBuilder: (_, i) {
-                              return const Divider();
-                            },
-                            itemBuilder: (_, i) {
-                              return const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('2003-2007'),
-                                    Text(
-                                        'International College of Arts & Science (UG)'),
-                                    Text('Bsc Computer Science'),
-                                  ],
-                                ),
-                              );
-                            }),
-                      ),
-                    ],
-                  ),
+                  TimeLIneTab(),
+                  TimeLIneTab(),
                 ]),
               ),
-            )
+            ),
           ],
         ),
       ),

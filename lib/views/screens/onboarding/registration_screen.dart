@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:hrms/views/widgets/common_widget.dart/app_button_widget.dart';
-
 import '../../themes/app_text_style.dart';
 
-import '../../widgets/common_widget.dart/app_textfield.dart';
-import '../../widgets/common_widget.dart/app_topbar_widget.dart';
+import '../../widgets/app_button_widget.dart';
+import '../../widgets/app_textfield.dart';
+import '../../widgets/app_topbar_widget.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -19,9 +18,7 @@ class RegisterScreen extends StatelessWidget {
         body: Column(children: [
       const AppTopBarWidget(title: "REGISTER"),
       Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 25,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(children: [
             const SizedBox(height: 35),
             const AppTextFieldWidget(
@@ -54,7 +51,7 @@ class RegisterScreen extends StatelessWidget {
               title: "REGISTER",
             ),
             const SizedBox(height: 45),
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
@@ -62,15 +59,20 @@ class RegisterScreen extends StatelessWidget {
                   style: AppTextStyle.blackF14FW500TextStyle,
                 ),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()));
                   },
                   child: const Text(
                     "Login",
                     style: AppTextStyle.orangeF11FW500TextStyle,
                   ),
                 ),
-                const SizedBox(width: 5,),
+                const SizedBox(
+                  width: 5,
+                ),
                 const Text(
                   "Now",
                   style: AppTextStyle.blackF14FW500TextStyle,

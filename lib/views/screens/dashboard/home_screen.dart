@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hrms/views/screens/employees/attendence_screen.dart';
+import 'package:hrms/views/screens/employees/holiday_screen.dart';
 
+import '../employees/attendence_details.dart';
+import '../employees/leave_request.dart';
 import 'profile_screen.dart';
 import 'settings_screen.dart';
 import '../../themes/app_colors.dart';
@@ -168,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const ProjectScreen()));
+                            builder: (_) => const AttendenceDetailsList()));
                   },
                 ),
               ),
@@ -202,7 +206,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const EmployeeScreen()));
+                            builder: (_) => const LeaveRequest()));
                   },
                 ),
               ),

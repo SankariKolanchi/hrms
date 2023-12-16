@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hrms/utilis/app_ui_constants.dart';
+import 'package:hrms/views/screens/employees/holiday_widget.dart';
 import 'package:hrms/views/screens/invoices/invoice_add_widget.dart';
 import 'package:timelines/timelines.dart';
 
@@ -19,7 +20,7 @@ class HolidayScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AppUiConstants.baseBottomSheet(context, InvoiceAddWidget());
+          AppUiConstants.baseBottomSheet(context, HolidayAddWidget());
         },
         backgroundColor: Colors.orange,
         child: const Icon(Icons.add, color: Colors.white),
@@ -60,6 +61,10 @@ class HolidayScreen extends StatelessWidget {
               height: 60,
               child: Stack(
                 children: [
+                  Text("Sort"),
+                  Image.asset(
+                    "assets/images/sort.png",
+                  ),
                   Positioned(
                     left: 0,
                     right: 0,

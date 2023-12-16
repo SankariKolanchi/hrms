@@ -15,7 +15,7 @@ class InvoiceAddWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const AppTextFieldWidget(
-            hintText: "Invoice code",
+            hintText: "Holiday Name",
             textStyle: AppTextStyle.blackF14FW500TextStyle,
           ),
           const AppTextFieldWidget(

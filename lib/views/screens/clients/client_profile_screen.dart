@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../themes/app_colors.dart';
-
-import '../../widgets/common_widget.dart/profile_image_widget.dart';
+import '../../widgets/profile_image_widget.dart';
 import '../invoices/invoice_screen.dart';
 import '../projects/projects_screen.dart';
 
@@ -155,7 +154,9 @@ class ClientProfileScreen extends StatelessWidget {
                           child: ListView.builder(
                               itemCount: 10,
                               itemBuilder: (_, i) {
-                                return const InvoiceItemWidget();
+                                return InvoiceItemWidget(
+                                  onTap: () {},
+                                );
                               })),
                     ],
                   ),
@@ -171,7 +172,9 @@ class ClientProfileScreen extends StatelessWidget {
                           child: ListView.builder(
                               itemCount: 10,
                               itemBuilder: (_, i) {
-                                return const InvoiceItemWidget();
+                                return InvoiceItemWidget(
+                                  onTap: () {},
+                                );
                               })),
                     ],
                   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/views/themes/app_theme.dart';
 
-import 'views/screens/splash_screen.dart';
+import 'views/screens/onboarding/splash_screen.dart';
+import 'views/themes/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +17,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.appTheme,
       home: const SplashScreen(),
-      // colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blueColor),
-      // useMaterial3: true,
     );
   }
 }

@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 sealed class AppUiConstants {
   const AppUiConstants._();
 
-  static void baseBottomSheet(
-    BuildContext context,
-    Widget widget,
-  ) {
+  static void baseBottomSheet(BuildContext context, Widget widget) {
     showModalBottomSheet(
         context: context,
         isScrollControlled: true,

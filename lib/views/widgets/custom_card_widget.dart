@@ -42,11 +42,32 @@ class CustomCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              image,
-              width: 60,
-              height: 60,
-              alignment: Alignment.center,
+            Stack(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.orange, width: 1.5)),
+                  child: Image.asset(
+                    image,
+                    width: 60,
+                    height: 60,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const Positioned(
+                  right: 0,
+                  child: CircleAvatar(
+                    radius: 12,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.check_circle,
+                      color: Colors.green,
+                    ),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 15),
             Text(text2, style: AppTextStyle.blackF25FW500TextStyle),

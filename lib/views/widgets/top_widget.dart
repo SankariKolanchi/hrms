@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/app_colors.dart';
+import '../themes/app_colors.dart';
 import 'custom_appbar.dart';
 
 class TopWidget extends StatelessWidget {

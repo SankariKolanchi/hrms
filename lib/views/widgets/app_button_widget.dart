@@ -31,7 +31,7 @@ class AppButtonWidget extends StatelessWidget {
         ], color: color, borderRadius: BorderRadius.circular(15.0)),
         child: Text(
           title,
-          style: AppTextStyle.whiteF22FW500TextStyle,
+          style: AppTextStyle.whiteF15FW500TextStyle,
         ),
       ),
     );

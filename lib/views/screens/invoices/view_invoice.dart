@@ -10,10 +10,7 @@ class ViewInvoice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Invoices',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Invoices', style: TextStyle(color: Colors.white)),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -156,29 +153,23 @@ class ViewInvoice extends StatelessWidget {
                     children: const [
                       TableRow(children: [
                         Column(children: [
-                          Text('Website', style: TextStyle(fontSize: 20.0))
+                          Text('Item', style: TextStyle(fontSize: 12.0))
                         ]),
                         Column(children: [
-                          Text('Tutorial', style: TextStyle(fontSize: 20.0))
+                          Text('Price', style: TextStyle(fontSize: 12.0))
                         ]),
                         Column(children: [
-                          Text('Review', style: TextStyle(fontSize: 20.0))
+                          Text('QTY', style: TextStyle(fontSize: 12.0))
+                        ]),
+                        Column(children: [
+                          Text('Total', style: TextStyle(fontSize: 12.0))
                         ]),
                       ]),
                       TableRow(children: [
-                        Column(children: [Text('Javatpoint')]),
-                        Column(children: [Text('Flutter')]),
-                        Column(children: [Text('5*')]),
-                      ]),
-                      TableRow(children: [
-                        Column(children: [Text('Javatpoint')]),
-                        Column(children: [Text('MySQL')]),
-                        Column(children: [Text('5*')]),
-                      ]),
-                      TableRow(children: [
-                        Column(children: [Text('Javatpoint')]),
-                        Column(children: [Text('ReactJS')]),
-                        Column(children: [Text('5*')]),
+                        Column(children: [Text('Test')]),
+                        Column(children: [Text('Rs.100')]),
+                        Column(children: [Text('Rs.5')]),
+                        Column(children: [Text('Rs.5')]),
                       ]),
                     ],
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../themes/app_colors.dart';
+import '../themes/app_text_style.dart';
 
 class ProfileImageWidget extends StatelessWidget {
   const ProfileImageWidget(
@@ -57,8 +58,7 @@ class ProfileImageWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(title,
-                style: const TextStyle(fontSize: 16, color: Colors.white)),
+            Text(title, style: AppTextStyle.whiteF15FW500TextStyle),
             const SizedBox(height: 10),
             Text(subTitle,
                 style: const TextStyle(fontSize: 13, color: Colors.white)),

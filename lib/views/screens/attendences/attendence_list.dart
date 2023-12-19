@@ -1,3 +1,4 @@
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 
 import '../../themes/app_colors.dart';
@@ -10,10 +11,8 @@ class AttendanceList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Attendance',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Attendance',
+            style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -31,10 +30,7 @@ class AttendanceList extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('JAN 15 2023',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            )),
+                            style: AppTextStyle.whiteF15FW500TextStyle),
                         Icon(
                           Icons.receipt_long_outlined,
                           size: 30,
@@ -123,8 +119,8 @@ class AttendanceList extends StatelessWidget {
                           size: 28,
                         ),
                       ),
-                      Text("John Doe",
-                          style: AppTextStyle.blackF14FW500TextStyle),
+                      Text("Jon Doe",
+                          style: AppTextStyle.blackF12FW500TextStyle),
                     ],
                   ),
                 );
@@ -135,11 +131,4 @@ class AttendanceList extends StatelessWidget {
       ),
     );
   }
-
-  DatePicker(DateTime dateTime,
-      {required int height,
-      required DateTime initialSelectedDate,
-      required Color selectionColor,
-      required Color selectedTextColor,
-      required Null Function(dynamic date) onDateChange}) {}
 }

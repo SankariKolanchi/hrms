@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/app_colors.dart';
-import '../../themes/app_text_style.dart';
+import '../themes/app_colors.dart';
+import '../themes/app_text_style.dart';
 
 ///Important
 ///TODO
@@ -13,7 +13,8 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings', style: AppTextStyle.whiteF22FW500TextStyle),
+        title:
+            const Text('Settings', style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -30,7 +31,7 @@ class SettingsScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('List of Settings',
-                            style: AppTextStyle.whiteF22FW500TextStyle),
+                            style: AppTextStyle.whiteF15FW500TextStyle),
                         Icon(
                           Icons.settings,
                           size: 30,

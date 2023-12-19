@@ -10,10 +10,8 @@ class AttendenceList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Attendence',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Attendence',
+            style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       body: Column(
         children: [
@@ -28,13 +26,8 @@ class AttendenceList extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'December 2023',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
-                      ),
+                      Text('December 2023',
+                          style: AppTextStyle.whiteF15FW500TextStyle),
                       Icon(
                         Icons.calendar_view_day_rounded,
                         size: 30,
@@ -166,12 +159,8 @@ class DayDateItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(day,
-            style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.white)),
-        Text(date, style: const TextStyle(fontSize: 16, color: Colors.white)),
+        Text(day, style: AppTextStyle.whiteF15FW500TextStyle),
+        Text(date, style: AppTextStyle.whiteF15FW500TextStyle),
       ],
     );
   }

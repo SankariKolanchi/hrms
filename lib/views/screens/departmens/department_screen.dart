@@ -1,27 +1,26 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
 import '../../../utilis/app_ui_constants.dart';
 import '../../themes/app_colors.dart';
-import 'add_project_widget.dart';
-import 'project_details_screen.dart';
+import '../holidays/add_holidays_widget.dart';
+import 'add_departments_widget.dart';
 
-class ProjectScreen extends StatelessWidget {
-  const ProjectScreen({super.key});
+class DepartmentScreen extends StatelessWidget {
+  const DepartmentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Projects',
+          'Department',
           style: TextStyle(color: Colors.white),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AppUiConstants.baseBottomSheet(context, const AddProjectWidget());
+          AppUiConstants.baseBottomSheet(context, const AddDepartmentWidget());
         },
         backgroundColor: Colors.orange,
         child: const Icon(Icons.add, color: Colors.white),
@@ -41,7 +40,7 @@ class ProjectScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Projects List',
+                      Text('Lists of Departments',
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -80,12 +79,7 @@ class ProjectScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 26),
-            child: Row(
-              children: [Text('Sort By'), SizedBox(width: 5), Icon(Icons.sort)],
-            ),
-          ),
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Timeline.tileBuilder(
@@ -100,15 +94,21 @@ class ProjectScreen extends StatelessWidget {
               builder: TimelineTileBuilder.fromStyle(
                 contentsAlign: ContentsAlign.basic,
                 nodePositionBuilder: (context, index) => 0.05,
-                contentsBuilder: (context, index) => Padding(
+                contentsBuilder: (context, index) => Container(
                   padding: const EdgeInsets.all(12.0),
-                  child: ProjectItemWidget(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (_) => const ProjectDetailScreen()));
-                    },
+                  margin: const EdgeInsets.all(12.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: const [
+                        BoxShadow(color: Colors.grey, blurRadius: 0.5)
+                      ]),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Children Days'),
+                    ],
                   ),
                 ),
                 itemCount: 10,
@@ -117,72 +117,6 @@ class ProjectScreen extends StatelessWidget {
           )
         ],
       )),
-    );
-  }
-}
-
-class ProjectItemWidget extends StatelessWidget {
-  const ProjectItemWidget({super.key, required this.onTap});
-  final Function onTap;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => onTap(),
-      child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(35),
-                boxShadow: const [
-                  BoxShadow(
-                      color: Colors.grey, spreadRadius: 0.4, blurRadius: 1.5)
-                ]),
-            child: Stack(
-              children: [
-                Positioned(
-                    top: 0,
-                    right: 150,
-                    bottom: 0,
-                    left: 0,
-                    child: Container(
-                        decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.35),
-                      borderRadius: BorderRadius.circular(35),
-                    ))),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Office Management'),
-                      SizedBox(height: 5),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(Icons.calendar_month),
-                              Text('12 Jun 2018')
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.message_outlined),
-                              Text('12')
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

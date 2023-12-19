@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio:
   timelines: ^0.1.0
+  date_picker_timeline: ^1.2.5
+  syncfusion_flutter_datepicker: ^23.2.7
 
 
 dev_dependencies:

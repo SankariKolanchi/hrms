@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/utilis/app_ui_constants.dart';
-import 'package:hrms/views/screens/employees/holiday_widget.dart';
-import 'package:hrms/views/screens/invoices/invoice_add_widget.dart';
 import 'package:timelines/timelines.dart';
 
 import '../../themes/app_colors.dart';
 
-class HolidayScreen extends StatelessWidget {
-  const HolidayScreen({super.key});
+class LeaveListScreen extends StatelessWidget {
+  const LeaveListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Holiday',
-          style: TextStyle(color: Colors.black),
+          'Leave List',
+          style: TextStyle(color: Colors.white),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          AppUiConstants.baseBottomSheet(context, HolidayAddWidget());
-        },
-        backgroundColor: Colors.orange,
-        child: const Icon(Icons.add, color: Colors.white),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -39,13 +29,13 @@ class HolidayScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Go to calender',
+                        Text('List of Leaves',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.white,
                             )),
                         Icon(
-                          Icons.calendar_view_day_rounded,
+                          Icons.calendar_month,
                           size: 30,
                           color: Colors.white,
                         )
@@ -61,10 +51,6 @@ class HolidayScreen extends StatelessWidget {
               height: 60,
               child: Stack(
                 children: [
-                  Text("Sort"),
-                  Image.asset(
-                    "assets/images/sort.png",
-                  ),
                   Positioned(
                     left: 0,
                     right: 0,
@@ -87,68 +73,54 @@ class HolidayScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               theme: TimelineThemeData(
                   indicatorTheme: const IndicatorThemeData(
-                    color: AppColors.orangeColor,
+                    color: AppColors.blueColor,
                     size: 18.0,
                   ),
                   connectorTheme: const ConnectorThemeData(color: Colors.grey)),
               builder: TimelineTileBuilder.fromStyle(
                 contentsAlign: ContentsAlign.basic,
                 nodePositionBuilder: (context, index) => 0.05,
-                contentsBuilder: (context, index) => const Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: HolidayItemWidget(),
+                contentsBuilder: (context, index) => Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(35)),
+                  padding: const EdgeInsets.all(12.0),
+                  margin: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const Text(
+                            'Arun Paul',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          const SizedBox(width: 6),
+                          Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.orange),
+                              child: const Text(
+                                'Pending',
+                                style: TextStyle(color: Colors.white),
+                              ))
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Plain Leave',
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ],
+                  ),
                 ),
                 itemCount: 10,
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 15)
           ],
         ),
-      ),
-    );
-  }
-}
-
-class HolidayItemWidget extends StatelessWidget {
-  const HolidayItemWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(35),
-          boxShadow: const [
-            BoxShadow(color: Colors.grey, blurRadius: 0.5, spreadRadius: 1)
-          ]),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Text('Childrens Day'),
-                  const SizedBox(width: 6),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(15)),
-                  )
-                ],
-              ),
-              const Text(
-                '19 Nov 2019',
-              ),
-            ],
-          ),
-          const Text('MO')
-        ],
       ),
     );
   }

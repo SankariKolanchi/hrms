@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/holiday_widgets.dart';
+import '../themes/app_text_style.dart';
+import '../widgets/holiday_widgets.dart';
 
 class HolidayListScreen extends StatelessWidget {
   const HolidayListScreen({Key? key}) : super(key: key);
@@ -19,10 +20,8 @@ class HolidayListScreen extends StatelessWidget {
             size: 19,
           ),
         ),
-        title: const Text(
-          'Holiday List',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Holiday List',
+            style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -40,10 +39,7 @@ class HolidayListScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text('Go to calendar',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              )),
+                              style: AppTextStyle.whiteF15FW500TextStyle),
                           Icon(
                             Icons.calendar_view_day_rounded,
                             size: 30,

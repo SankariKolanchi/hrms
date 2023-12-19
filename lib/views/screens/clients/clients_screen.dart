@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../utilis/app_ui_constants.dart';
-import '../../widgets/common_widget.dart/card_widget.dart';
-import '../../widgets/common_widget.dart/top_widget.dart';
+import '../../themes/app_text_style.dart';
+import '../../widgets/card_widget.dart';
+import '../../widgets/top_widget.dart';
 import 'add_clients_widgets.dart';
 import 'client_profile_screen.dart';
 
@@ -18,10 +19,8 @@ class ClientsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Clients',
-          style: TextStyle(color: Colors.white),
-        ),
+        title:
+            const Text('Clients', style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -60,7 +59,10 @@ class ClientsScreen extends StatelessWidget {
                                       builder: (_) =>
                                           const ClientProfileScreen()));
                             },
-                            onEdit: () {},
+                            onEdit: () {
+                              AppUiConstants.baseBottomSheet(
+                                  context, const AddClientsWidget());
+                            },
                             onDelete: () {},
                             icon: Icons.person,
                             text: "Android Developer",

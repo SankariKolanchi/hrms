@@ -1,24 +1,16 @@
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
 import '../../themes/app_colors.dart';
-
 import '../../themes/app_text_style.dart';
-import '../../widgets/custom_card_widget.dart';
-import '../invoices/invoice_screen.dart';
+import 'attendence_screen.dart';
 
-class AttendenceScreen extends StatefulWidget {
-  const AttendenceScreen({Key? key}) : super(key: key);
+class AttendanceDetailScreen extends StatelessWidget {
+  const AttendanceDetailScreen({super.key});
 
-  @override
-  State<AttendenceScreen> createState() => _AttendenceScreenState();
-}
-
-class _AttendenceScreenState extends State<AttendenceScreen> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Attendance',
@@ -29,24 +21,52 @@ class _AttendenceScreenState extends State<AttendenceScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: double.infinity,
               color: AppColors.blueColor,
-              height: height * 33 / 100,
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 10),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('JAN 15 2023',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            )),
+                        Icon(
+                          Icons.receipt_long_outlined,
+                          size: 30,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    DatePicker(
+                      DateTime.now(),
+                      height: 100,
+                      initialSelectedDate: DateTime.now(),
+                      selectionColor: Colors.white,
+                      selectedTextColor: Colors.black,
+                      onDateChange: (date) {},
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              color: AppColors.blueColor,
+              height: 60,
               child: Stack(
                 children: [
-                  Container(
-                    alignment: Alignment.topCenter,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: const Text('18 December 2019',
-                        style: AppTextStyle.whiteF15FW500TextStyle),
-                  ),
                   Positioned(
                     left: 0,
                     right: 0,
-                    bottom: 0,
-                    top: 180,
+                    top: 30,
                     child: Container(
-                      height: 20,
+                      height: 40,
                       width: double.infinity,
                       decoration: const BoxDecoration(
                           color: Colors.white,
@@ -55,39 +75,35 @@ class _AttendenceScreenState extends State<AttendenceScreen> {
                               topRight: Radius.circular(30))),
                     ),
                   ),
-                  Positioned(
-                    top: 40,
-                    left: 30,
-                    width: 150,
-                    height: 200,
-                    child: CustomCardWidget(
-                      image: "assets/images/finger_print.png",
-                      text2: "Punch in",
-                      text: "00:00:00",
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const InvocieScreen()));
-                      },
-                    ),
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 16.0, top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_circle_left,
+                        color: Colors.orange,
+                      ),
+                      Text("PREVIOUS",
+                          textAlign: TextAlign.left,
+                          style: AppTextStyle.blackF18FW400TextStyle),
+                    ],
                   ),
-                  Positioned(
-                    top: 60,
-                    right: 30,
-                    width: 150,
-                    height: 200,
-                    child: CustomCardWidget(
-                      image: "assets/images/finger_print.png",
-                      text2: "Punch out",
-                      text: "00:00:00",
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const InvocieScreen()));
-                      },
-                    ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_circle_left,
+                        color: Colors.orange,
+                      ),
+                      Text("NEXT",
+                          textAlign: TextAlign.left,
+                          style: AppTextStyle.blackF18FW400TextStyle),
+                    ],
                   ),
                 ],
               ),
@@ -140,42 +156,6 @@ class _AttendenceScreenState extends State<AttendenceScreen> {
             const SizedBox(height: 15),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class AttendenceItemWidget extends StatelessWidget {
-  const AttendenceItemWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(35),
-        boxShadow: const [
-          BoxShadow(color: Colors.grey, blurRadius: 0.5, spreadRadius: 1),
-        ],
-      ),
-      child: const Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Text('Punch In'),
-                  SizedBox(width: 6),
-                ],
-              ),
-            ],
-          ),
-          Text('10:00:00 AM'),
-        ],
       ),
     );
   }

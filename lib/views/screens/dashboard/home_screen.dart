@@ -1,19 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hrms/views/screens/employees/attendence_screen.dart';
-import 'package:hrms/views/screens/employees/holiday_screen.dart';
 
-import '../employees/attendence_details.dart';
-import '../employees/leave_request.dart';
-import 'profile_screen.dart';
-import 'settings_screen.dart';
 import '../../themes/app_colors.dart';
-import '../../widgets/common_widget.dart/custom_appbar.dart';
-import '../../widgets/common_widget.dart/custom_card_widget.dart';
-import '../../widgets/common_widget.dart/drawer_widget.dart';
+import '../../widgets/custom_appbar.dart';
+import '../../widgets/drawer_widget.dart';
+import '../../widgets/custom_card_widget.dart';
+
+import '../invoices/invoice_screen.dart';
+import '../profile_screen.dart';
+import '../projects/projects_screen.dart';
+import '../settings_screen.dart';
 import '../clients/clients_screen.dart';
 import '../employees/employee_screen.dart';
-import '../invoices/invoice_screen.dart';
-import '../projects/projects_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -29,105 +27,105 @@ class HomeScreen extends StatelessWidget {
       key: scaffoldKey,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            scaffoldKey.currentState?.openDrawer();
-          },
-          child: const Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
-        actions: [
-          InkWell(
+          leading: InkWell(
             onTap: () {
-              ///TODO
-              ///Change dialog box to popupmenubutton
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    content: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: ListTile(
-                            title: const Text('Profile '),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const MyProfileScreen(),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: ListTile(
-                            title: const Text(' Settings'),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const SettingsScreen(),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: ListTile(
-                            title: const Text('Logout'),
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: const Text('Confirm Logout'),
-                                    content: const Text(
-                                        'Are you sure you want to log out?'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: const Text('Cancel'),
-                                      ),
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: const Text('Logout'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              );
+              scaffoldKey.currentState?.openDrawer();
             },
-            child: const Padding(
-              padding: EdgeInsets.all(12),
-              child: Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              ),
+            child: const Icon(
+              Icons.menu,
+              color: Colors.white,
             ),
           ),
-        ],
-        toolbarHeight: 100,
-      ),
+          actions: [
+            InkWell(
+              onTap: () {
+                ///TODO
+                ///Change dialog box to popupmenubutton
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      content: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: ListTile(
+                              title: const Text('Profile '),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const MyProfileScreen(),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: ListTile(
+                              title: const Text(' Settings'),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SettingsScreen(),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: ListTile(
+                              title: const Text('Logout'),
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: const Text('Confirm Logout'),
+                                      content: const Text(
+                                          'Are you sure you want to log out?'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Text('Cancel'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Text('Logout'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(12),
+                child: Icon(
+                  Icons.more_vert,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ]),
       drawer: const DrawerScreen(),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -172,7 +170,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => const AttendenceDetailsList()));
+                            builder: (_) => const ProjectScreen()));
                   },
                 ),
               ),
@@ -205,8 +203,8 @@ class HomeScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (_) => const LeaveRequest()));
+                        CupertinoPageRoute(
+                            builder: (_) => const EmployeeScreen()));
                   },
                 ),
               ),

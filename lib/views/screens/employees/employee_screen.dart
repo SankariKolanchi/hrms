@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../dashboard/profile_screen.dart';
 import '../../../utilis/app_ui_constants.dart';
-
-import '../../widgets/common_widget.dart/card_widget.dart';
-import '../../widgets/common_widget.dart/top_widget.dart';
+import '../../themes/app_text_style.dart';
+import '../../widgets/card_widget.dart';
+import '../../widgets/top_widget.dart';
+import '../profile_screen.dart';
 import 'employee_add_widget.dart';
 
 class EmployeeScreen extends StatelessWidget {
@@ -19,10 +19,8 @@ class EmployeeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Employee',
-          style: TextStyle(color: Colors.white),
-        ),
+        title:
+            const Text('Employee', style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -55,7 +53,10 @@ class EmployeeScreen extends StatelessWidget {
                         itemBuilder: (context, i) {
                           return CustomCardWithIconWidget(
                             onDelete: () {},
-                            onEdit: () {},
+                            onEdit: () {
+                              AppUiConstants.baseBottomSheet(
+                                  context, const EmployeeAddWidget());
+                            },
                             onTap: () {
                               Navigator.push(
                                   context,
@@ -72,7 +73,7 @@ class EmployeeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 5)
+          const SizedBox(height: 15)
         ],
       ),
     );

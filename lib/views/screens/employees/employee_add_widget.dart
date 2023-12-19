@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../themes/app_text_style.dart';
-import '../../widgets/common_widget.dart/app_button_widget.dart';
-import '../../widgets/common_widget.dart/app_textfield.dart';
+import '../../widgets/app_button_widget.dart';
+import '../../widgets/app_textfield.dart';
 
 class EmployeeAddWidget extends StatelessWidget {
   const EmployeeAddWidget({super.key});

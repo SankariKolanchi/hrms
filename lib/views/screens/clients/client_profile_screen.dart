@@ -1,8 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:timelines/timelines.dart';
+
 import '../../themes/app_colors.dart';
+import '../../themes/app_text_style.dart';
 import '../../widgets/profile_image_widget.dart';
 import '../invoices/invoice_screen.dart';
+import '../projects/project_details_screen.dart';
 import '../projects/projects_screen.dart';
 
 class ClientProfileScreen extends StatelessWidget {
@@ -12,10 +17,8 @@ class ClientProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Client Profile',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Client Profile',
+            style: AppTextStyle.whiteF15FW500TextStyle),
       ),
       body: DefaultTabController(
           length: 4,
@@ -151,13 +154,27 @@ class ClientProfileScreen extends StatelessWidget {
                         child: Text('Invoices'),
                       ),
                       Expanded(
-                          child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (_, i) {
-                                return InvoiceItemWidget(
-                                  onTap: () {},
-                                );
-                              })),
+                          child: Timeline.tileBuilder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        theme: TimelineThemeData(
+                            indicatorTheme: const IndicatorThemeData(
+                              color: AppColors.blueColor,
+                              size: 18.0,
+                            ),
+                            connectorTheme:
+                                const ConnectorThemeData(color: Colors.grey)),
+                        builder: TimelineTileBuilder.fromStyle(
+                          contentsAlign: ContentsAlign.basic,
+                          nodePositionBuilder: (context, index) => 0.0,
+                          contentsBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InvoiceItemWidget(onTap: () {}),
+                          ),
+                          itemCount: 10,
+                        ),
+                      )),
+                      const SizedBox(height: 5)
                     ],
                   ),
                   Column(
@@ -169,13 +186,27 @@ class ClientProfileScreen extends StatelessWidget {
                         child: Text('Estimates'),
                       ),
                       Expanded(
-                          child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (_, i) {
-                                return InvoiceItemWidget(
-                                  onTap: () {},
-                                );
-                              })),
+                          child: Timeline.tileBuilder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        theme: TimelineThemeData(
+                            indicatorTheme: const IndicatorThemeData(
+                              color: AppColors.blueColor,
+                              size: 18.0,
+                            ),
+                            connectorTheme:
+                                const ConnectorThemeData(color: Colors.grey)),
+                        builder: TimelineTileBuilder.fromStyle(
+                          contentsAlign: ContentsAlign.basic,
+                          nodePositionBuilder: (context, index) => 0.0,
+                          contentsBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InvoiceItemWidget(onTap: () {}),
+                          ),
+                          itemCount: 10,
+                        ),
+                      )),
+                      const SizedBox(height: 5)
                     ],
                   ),
                   Column(
@@ -187,11 +218,34 @@ class ClientProfileScreen extends StatelessWidget {
                         child: Text('Projects'),
                       ),
                       Expanded(
-                          child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (_, i) {
-                                return const ProjectItemWidget();
-                              })),
+                          child: Timeline.tileBuilder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        theme: TimelineThemeData(
+                            indicatorTheme: const IndicatorThemeData(
+                              color: AppColors.blueColor,
+                              size: 18.0,
+                            ),
+                            connectorTheme:
+                                const ConnectorThemeData(color: Colors.grey)),
+                        builder: TimelineTileBuilder.fromStyle(
+                          contentsAlign: ContentsAlign.basic,
+                          nodePositionBuilder: (context, index) => 0.0,
+                          contentsBuilder: (context, index) => Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ProjectItemWidget(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      CupertinoPageRoute(
+                                          builder: (_) =>
+                                              const ProjectDetailScreen()));
+                                },
+                              )),
+                          itemCount: 10,
+                        ),
+                      )),
+                      const SizedBox(height: 5)
                     ],
                   ),
                 ]),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:timelines/timelines.dart';
 
+import '../../../utilis/app_ui_constants.dart';
 import '../../themes/app_colors.dart';
+import 'add_invoice_widget.dart';
 import 'view_invoice.dart';
 
 class InvocieScreen extends StatelessWidget {
@@ -18,7 +19,9 @@ class InvocieScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          AppUiConstants.baseBottomSheet(context, const AddInvoiceWidget());
+        },
         backgroundColor: Colors.orange,
         child: const Icon(Icons.add, color: Colors.white),
       ),

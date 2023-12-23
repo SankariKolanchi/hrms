@@ -61,7 +61,7 @@ class _AttendenceScreenState extends State<AttendenceScreen> {
                     width: 150,
                     height: 200,
                     child: CustomCardWidget(
-                      image: "assets/images/finger_print.png",
+                      image: "assets/images/punchfinger.png",
                       text2: "Punch in",
                       text: "00:00:00",
                       onTap: () {
@@ -78,7 +78,7 @@ class _AttendenceScreenState extends State<AttendenceScreen> {
                     width: 150,
                     height: 200,
                     child: CustomCardWidget(
-                      image: "assets/images/finger_print.png",
+                      image: "assets/images/punchfinger.png",
                       text2: "Punch out",
                       text: "00:00:00",
                       onTap: () {
